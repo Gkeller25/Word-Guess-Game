@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+<style>
+    body{background-image: url("assets/images/outer-space-Texture.jpg");
+    font-family: myFirstFont} 
+    @font-face {
+    font-family: myFirstFont;
+    src: url("assets/images/Starjedi.ttf");}
+
+</style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand text-dark">Welcome</a>
+            </div>
+          </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-1">Hangman</h1>
+            </div>
+        </div>                
+                <!--How to Play the Game info locate here-->                            
+                <!--Locate the Correct words and #ofLives here-->
+        <div class="row">
+            <div class="col-6">
+                <div class="container">
+                    <p class="text-muted" id="currentWord"></p> 
+                    <p>Letters Already Guessed</p>               
+                    <p class="text-light" id="guessedWords"></p>
+                    <p id=".lettersGuessed"></p>
+                </div>
+            </div>
+            <div class="col-6">                           
+                <p class="text-light" id="gameStats">Guesses left: </p>
+                <p class="text-light">Words Guessed Correctly: </p>
+            </div>
+        </div>
+                
+    </div>
+
+ 
+
+
+
+
+      <div id="game">
+    
+    
+        </div>
+    
+   
+    
+    <script src="assets/javascript/game.js"></script>
+    
+    <div class="fixed-bottom">     
+            <div class="row">
+                <div class="col-md-12 text-center bg-light text-dark pt-3 pb-3">
+                    <footer>Copyright©</footer>
+                </div> 
+            </div>
+        </div>
+
+</body>
+
+</html>
