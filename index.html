@@ -8,70 +8,107 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Word-Guess Game</title>
   </head>
   <body>
-<style>
-    body{background-image: url("assets/images/outer-space-Texture.jpg");
-    font-family: myFirstFont} 
-    @font-face {
-    font-family: myFirstFont;
-    src: url("assets/images/Starjedi.ttf");}
+    <style>
+        body{background-image: url("assets/images/outer-space-Texture.jpg");
+            font-family: myFirstFont} 
+            @font-face {
+            font-family: myFirstFont;
+            src: url("assets/images/Starjedi.ttf");}
+        #gameTitle{text-shadow: 0 0 1px #999,
 
-</style>
+            1px 1px 1px #888,
+
+            2px 2px 1px #777,
+
+            3px 3px 1px #666,
+
+            4px 4px 1px #555,
+
+            5px 5px 1px #444;}
+        #Scope, #Letters, #instructions{box-shadow: 0 0 1px #999,
+
+            1px 1px 1px #888,
+
+            2px 2px 1px #777,
+
+            3px 3px 1px #666,
+
+            4px 4px 1px #555,
+
+            5px 5px 1px #444;}
+   
+    </style>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-              <a class="navbar-brand text-dark">Welcome</a>
-            </div>
-          </nav>
+        <div class="container">
+            <div class="navbar-brand text-dark">Welcome</div>
+        </div>
+    </nav>
 
     <div class="container">
-
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-12 text-center">
-                <h1 class="display-1">Hangman</h1>
-            </div>
-        </div>                
-                <!--How to Play the Game info locate here-->                            
-                <!--Locate the Correct words and #ofLives here-->
-        <div class="row">
-            <div class="col-6">
-                <div class="container">
-                    <p class="text-muted" id="currentWord"></p> 
-                    <p>Letters Already Guessed</p>               
-                    <p class="text-light" id="guessedWords"></p>
-                    <p id=".lettersGuessed"></p>
+                <div class="row mb-3 mt-3">
+                    <div class="container mb-3 mt-3">
+                        <h1 class="display-1 mb-3 mt-3 text-warning" id="gameTitle" onclick="gameStart()"><u>Hangman</u></h1>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">                           
-                <p class="text-light" id="gameStats">Guesses left: </p>
-                <p class="text-light">Words Guessed Correctly: </p>
-            </div>
-        </div>
-                
+            
+                <div class="row">
+                    <div class="col-6 offset-3">
+                        <div class="container mb-3 mt-3 ">
+                            <h1 class="display-2 text-warning " id="gameOutcome" style="display:none"><u></u></h1>
+                            <h5 class=" text-warning " id="Answer" style="display:none"><u></u></h5>
+                            <div class="card border-dark" id="instructions">
+                                <img class="card-img" src="assets/images/screen.png">
+                                <div class="card-img-overlay d-flex" >                               
+                                    <p class="card-title text-muted mx-auto my-auto">Press any key to start the game!</p>                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>    
+         <div class="row mt-3" id="content">
+            <div class="col-md-6 mt-3">
+                <div class="card border-dark" id="Scope">
+                    <img class="card-img" src="assets/images/scope.png" alt="Card image">
+                    <div class="card-img-overlay d-flex">
+                        <p class="card-title text-center text-muted my-auto mx-auto" id="currentWord"></p>
+                    </div>  
+                </div>
+                <div class="container text-center mt-3">
+                    <h5 class="text-muted" id="totalWins"></h5>
+                </div>
+            </div>  
+            <div class="col-md-6 mt-3">
+                <div class="card border-dark" id="Letters">
+                    <img class="card-img" src="assets/images/View2.jpg" alt="Guessed Letters">
+                    <div class="card-img-overlay d-flex flex-column">
+                            <h5 class="card-title text-muted mx-auto">Letters Already Guessed</h5>
+                            <p class="card-text text-muted text-center" id="guessedWords"></p>                        
+                    </div>
+                </div>
+                <div class="container text-center mt-3">
+                    <h5 class="text-muted" id="gameStats"></h5>
+                </div>
+            </div>                            
+        </div>                   
     </div>
-
  
-
-
-
-
-      <div id="game">
-    
-    
-        </div>
-    
-   
-    
     <script src="assets/javascript/game.js"></script>
     
     <div class="fixed-bottom">     
-            <div class="row">
-                <div class="col-md-12 text-center bg-light text-dark pt-3 pb-3">
-                    <footer>Copyright©</footer>
-                </div> 
-            </div>
+        <div class="row">
+            <div class="col-md-12 text-center bg-light text-dark pt-3 pb-3">
+                <footer>Copyright©</footer>
+            </div> 
         </div>
+    </div>
 
 </body>
 
